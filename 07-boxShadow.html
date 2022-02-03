@@ -12,8 +12,8 @@
         padding: 0;
       }
       main {
-        padding: 5px;
-        margin: 5px;
+        padding: 10px;
+        margin: 10px;
       }
       section {
         display: grid;
@@ -28,6 +28,14 @@
       footer {
         text-align: center;
         padding: 10px 0;
+      }
+      .shadow {
+        box-shadow: 10px 13px 24px -3px rgba(76, 18, 237, 0.59);
+        -webkit-box-shadow: 10px 13px 24px -3px rgba(76, 18, 237, 0.59);
+        -moz-box-shadow: 10px 13px 24px -3px rgba(76, 18, 237, 0.59);
+      }
+      .noshadow {
+        box-shadow: 0;
       }
     </style>
   </head>
@@ -76,7 +84,6 @@
       /*_____her defineres funktionen 'start'______*/
       function start() {
         console.log("dom er loaded");
-        
 
         /*_____her tager vi fat i titlen og overskriver hvad der står i html___*/
         const title = document.querySelector("header h1");
@@ -131,10 +138,38 @@
         /*____kalder funktion 'skiftBillede' til at skifte billede____*/
         document.addEventListener("click", skiftBillede);
         /*____her defineres funktionen 'skiftBillede'_________*/
-        function skiftBillede(){
-            console.log("her skifter billedet");
-            /*____linket er et link til forskellige billeder, og der bruges Math.round (runder op) og Math.random (random billede)*/
-            img1.src = "https://placeimg.com/400/300/arch?t="+Math.round(Math.random()*10);
+        function skiftBillede() {
+          console.log("her skifter billedet");
+          /*____linket er et link til forskellige billeder, og der bruges Math.round (runder op) og Math.random (random billede)*/
+          img1.src =
+            "https://placeimg.com/400/300/arch?t=" +
+            Math.round(Math.random() * 10);
+        }
+
+        //kalder på funktionen shadowOn
+        document
+          .querySelector("article")
+          .addEventListener("mouseover", shadowOn);
+
+        //forholder sig til at menuen skifter mellem at have klassen "shadow" og ikke
+        function shadowOn() {
+          console.log("shadow is on");
+          document.querySelector("article").classList.toggle("shadow");
+          //definere variabel let, som er når artiklen har klassen "shadow"
+          let erSkjult = document
+            .querySelector("article")
+            .classList.contains("shadow");
+          //ved at bruge variabel let til at skife mellem if or else med tegn herunder, når artiklen har skygge
+          if (erSkjult == true) {
+            document.querySelector("article").classList.contains("shadow");
+          } else {
+            document
+              .querySelector("article")
+              .addEventListener("mouseout", shadowOut);
+          }
+          function shadowOut() {
+            document.querySelector("article").classList.remove("shadow");
+          }
         }
       }
     </script>
