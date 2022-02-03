@@ -73,18 +73,28 @@
       console.log(title);
       title.textContent = "Billedegalleri";
       /*title.innerHTML = "<h1>Billeder</h1>";*/
-    
+
+     /*____her tager vi fat i artirklens første barn article:nth-child(1), 1 er altså barn 1*/
       const article1 = document.querySelector("article:nth-child(1)");
+     /*her tager vi fat i de 2 billeder med article:nth-child(1) img og article:nth-child(2) img*/
       const img1 = document.querySelector("article:nth-child(1) img");
-      /*____her tager vi fat i artirklens første barn article:nth-child(1), 1 er altså barn 1*/
+      const img2 = document.querySelector("article:nth-child(2) img");
+      /*___her tager vi fat i første artikels h3, altså article:nth-child(1) h3*/
       const article1Heading = document.querySelector("article:nth-child(1) h3");
       const article1Content = document.querySelector("article:nth-child(1) p");
+      /*udskriver i consollen (men virker ikke)*/
       console.log(article1, img1, article1Heading, article1Content);
 
       img1.alt = "billede af blå sten";
       article1Heading.textContent;
+      /*___ændre h3____*/
       article1Heading.textContent = "Blå sten";
+      /*___ændre p________*/
       article1Content.textContent = "Her er der nogle flotte blå sten i ørkenen";
+      /*_____ændre første billede til nyt billede____*/
+      img1.src = "billeder/ekstra.jpg";
+      /*_____ændre andet billede til nyt billede____*/
+      img2.src = "billeder/ekstra.jpg";
     </script>
   </body>
 </html>

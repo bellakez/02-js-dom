@@ -73,18 +73,55 @@
       console.log(title);
       title.textContent = "Billedegalleri";
       /*title.innerHTML = "<h1>Billeder</h1>";*/
-    
-      const article1 = document.querySelector("article:nth-child(1)");
-      const img1 = document.querySelector("article:nth-child(1) img");
+
       /*____her tager vi fat i artirklens første barn article:nth-child(1), 1 er altså barn 1*/
+      const article1 = document.querySelector("article:nth-child(1)");
+      /*her tager vi fat i de 2 billeder med article:nth-child(1) img og article:nth-child(2) img*/
+      const img1 = document.querySelector("article:nth-child(1) img");
+      const img2 = document.querySelector("article:nth-child(2) img");
+      /*___her tager vi fat i første artikels h3, altså article:nth-child(1) h3*/
       const article1Heading = document.querySelector("article:nth-child(1) h3");
       const article1Content = document.querySelector("article:nth-child(1) p");
+      /*udskriver i consollen (men virker ikke)*/
       console.log(article1, img1, article1Heading, article1Content);
 
       img1.alt = "billede af blå sten";
       article1Heading.textContent;
+      /*___ændre h3____*/
       article1Heading.textContent = "Blå sten";
-      article1Content.textContent = "Her er der nogle flotte blå sten i ørkenen";
+      /*___ændre p________*/
+      article1Content.textContent =
+        "Her er der nogle flotte blå sten i ørkenen";
+      /*_____ændre første billede til nyt billede____*/
+      img1.src = "billeder/ekstra.jpg";
+      /*_____ændre andet billede til nyt billede____*/
+      img2.src = "billeder/ekstra.jpg";
+
+      /*___NY ARTIKEL_____*/
+
+      /*_____laver ny variabel med js____________*/
+      let newArticle = document.createElement("article");
+      /*____sætter ming ny artikel ind i section i html____*/
+      let mainSection = document.querySelector("section");
+      /*____tilføj et ekstra "barn" til section (i html) med appendChild*/
+      mainSection.appendChild(newArticle);
+      /*___laver overskrift, som vi kalder "overskrift" til den nye artikel________*/
+      let overskrift = document.createElement("h3");
+      /*_____her defineres hvad der skal stå inde i teksten_____*/
+      let overskriftText = document.createTextNode("artikel3");
+      /*______her definere hvad der skal sættes (overskrift til artikel) ind i artiklen med appendChild igen__*/
+      overskrift.appendChild(overskriftText);
+      /*______her tilføjer vi overskriften til artiklen newArticle_____*/
+      newArticle.appendChild(overskrift);
+
+      /*_______LYT EFTER DOM ER LOADED________*/
+
+      /*____her laves lytter vi efter funktionen 'start' der tjekker om alt er loaded___*/
+      document.addEventListener("DOMContentLoaded", start);
+      /*_____her defineres funktionen 'start'______*/
+      function start() {
+        console.log("dom er loaded");
+      }
     </script>
   </body>
 </html>
