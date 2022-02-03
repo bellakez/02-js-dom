@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <img src="slideshow-pic/img1.png" alt="img1">
+        <img src="slideshow-pic/img2.png" alt="img2">
+        <img src="slideshow-pic/img3.png" alt="img3">
+        <img src="slideshow-pic/img4.png" alt="img4">
+        <img src="slideshow-pic/img5.png" alt="img5">
+        <img src="slideshow-pic/img6.png" alt="img6">
+        <img src="slideshow-pic/img7.png" alt="img7">
+        <img src="slideshow-pic/img8.png" alt="img8">
+        <button>klik</button>
+    </article>
+    <script>
+        const img1 = document.querySelector("article:nth-child(1) img");
+        const img2 = document.querySelector("article:nth-child(2) img");
+        const img3 = document.querySelector("article:nth-child(3) img");
+        const img4 = document.querySelector("article:nth-child(4) img");
+        const img5 = document.querySelector("article:nth-child(5) img");
+        const img6 = document.querySelector("article:nth-child(6) img");
+        const img7 = document.querySelector("article:nth-child(7) img");
+        const img8 = document.querySelector("article:nth-child(8) img");
+
+        const team = ["img1", "img2", "img3", "img4", "img5", "img6", "img7", "img8"];
+        
+        document.addEventListener("click", skiftBillede);
+        function skiftBillede() {
+            document.querySelector("button")+Math.random;
+            team.forEach
+        }
+    </script>
+    
+</body>
+</html>
