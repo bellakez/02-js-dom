@@ -59,7 +59,10 @@
         title.textContent = "Billedegalleri";
         /*title.innerHTML = "<h1>Billeder</h1>";*/
 
+        const article1 = document.querySelector("article:first-child");
         const pic1 = document.querySelector("article:first-child img");
+        const article1Heading = document.querySelector("article:nth-child(1) h3");
+        const article1Content = document.querySelector("article:nth-child(1) p");
         console.log(pic1);
         pic1.alt = "billede af blå sten";
 
